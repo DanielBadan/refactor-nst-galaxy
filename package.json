@@ -1,0 +1,35 @@
+{
+  "author": "Daniel Verejan",
+  "name": "d3-galaxy",
+  "version": "0.0.0",
+  "description": "D3 galaxy/star system",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "lint": "eslint src"
+  },
+  "main": "src/Galaxy.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
+    "eslint": "^3.6.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-react": "^6.3.0",
+    "express": "^4.14.0",
+    "html-webpack-plugin": "^2.22.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "dependencies": {
+    "d3-selection": "^1.0.2",
+    "redux": "^3.6.0"
+  }
+}
