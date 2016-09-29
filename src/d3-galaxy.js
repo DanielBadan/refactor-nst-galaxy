@@ -1,13 +1,15 @@
-import { createStore } from 'redux'
-import { rootElements } from './reducers';
+import { createStore, applyMiddleware } from 'redux';
+import createLogger from 'redux-logger';
+import reducers from './reducers';
 
 export default (data, wrapperId) => {
-  const store = createStore(rootElements);
+  const store = createStore(reducers, applyMiddleware(createLogger()));
   
-  // create root elements
+  // Create root elements
   store.dispatch({type: 'CREATE_ROOT', wrapperId});
-  // set initial svg size
+  // Set initial svg size
   store.dispatch({type: 'RESIZE'});
 
-  console.log(store.getState());
+  // Create star
+  store.dispatch({type: 'CREATE_STAR', data: data[0], id: 0, space: store.getState().rootElements.space});
 };
