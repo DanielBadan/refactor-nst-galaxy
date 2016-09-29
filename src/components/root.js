@@ -5,6 +5,7 @@ export default (wrapperId = '') => {
   const svg = wrapper.append('svg');
   const defs = svg.append('defs');
   const space = svg.append('g');
+  const axesG = defs.append('g');
 
-  return {wrapper, svg, defs, space};
+  return {wrapper, svg, defs, space, axesG};
 };

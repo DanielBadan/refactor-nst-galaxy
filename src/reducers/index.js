@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import root from '../components/root';
 import Star from '../components/Star';
+import Axis from '../components/Axis';
 
 const rootElements = (state = {}, action) => {
   switch (action.type) {
@@ -10,6 +11,19 @@ const rootElements = (state = {}, action) => {
       let rect = state.wrapper.node().getBoundingClientRect();
       state.svg.attr('width', rect.width).attr('height', rect.height);
       return state;
+    default:
+      return state;
+  }
+};
+
+const axes = (state = {}, action) => {
+  if (state[action.count]) {
+    return;
+  }
+
+  switch (action.type) {
+    case 'CREATE_AXIS':
+      return {...state, [action.count]: new Axis(action.count, action.axesG)};
     default:
       return state;
   }
@@ -25,4 +39,4 @@ const stars = (state = {}, action) => {
   }
 };
 
-export default combineReducers({stars, rootElements});
+export default combineReducers({stars, rootElements, axes});

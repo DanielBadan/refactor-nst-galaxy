@@ -5,6 +5,9 @@ class Star {
 
   createRootElements(space) {
     this.root = space.append('g');
+    this.root
+      .append('use')
+      .attr('href', '#axes-count-5');
   }
 }
 

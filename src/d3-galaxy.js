@@ -10,6 +10,20 @@ export default (data, wrapperId) => {
   // Set initial svg size
   store.dispatch({type: 'RESIZE'});
 
+  const rootElements = store.getState().rootElements;
+
+  // Create initial axis
+  store.dispatch({
+    type: 'CREATE_AXIS',
+    count: 5,
+    axesG: rootElements.axesG
+  });
+
   // Create star
-  store.dispatch({type: 'CREATE_STAR', data: data[0], id: 0, space: store.getState().rootElements.space});
+  store.dispatch({
+    type: 'CREATE_STAR',
+    data: data[0], id: 0,
+    space: rootElements.space,
+    axesG: rootElements.axesG,
+  });
 };
